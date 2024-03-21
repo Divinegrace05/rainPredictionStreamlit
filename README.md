@@ -19,6 +19,8 @@ Predictor:
 
 Result:
 ![rainApp · Streamlit - Google Chrome 21_03_2024 13_52_03](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/4977703f-f701-41b8-b811-57b99b5d69c8)
+![rainApp · Streamlit - Google Chrome 21_03_2024 16_39_03](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/f0255d7e-6894-4895-ba57-592d77d275ea)
+
 
 
 If you like this project please do give a star. I am also giving my LinkedIn profile. If you wish we can connect there too
