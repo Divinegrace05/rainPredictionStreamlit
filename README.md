@@ -1,4 +1,5 @@
 # rainPredictionStreamlit
+### FINAL OUTPUT OF THE PROJECT: 
 
 ![Streamlit - Google Chrome 14_03_2024 19_56_57](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/a47b700f-6cdf-477d-9b20-63d07f3bcdda)
 ![Streamlit - Google Chrome 14_03_2024 19_57_06](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/1e225c2a-bb50-4ed4-85e3-7e49bd69f99f)
