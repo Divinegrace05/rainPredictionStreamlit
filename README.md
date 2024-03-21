@@ -18,3 +18,8 @@ Predictor:
 
 Result:
 ![rainApp · Streamlit - Google Chrome 21_03_2024 13_14_43](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/f76586b1-8862-4af0-a029-7e50bb3d6f1a)
+
+
+If you like this project please do give a star. I am also giving my LinkedIn profile. If you wish we can connect there too
+www.linkedin.com/in/grace-gitau-297433277
+
