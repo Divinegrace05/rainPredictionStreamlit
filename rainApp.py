@@ -2,52 +2,64 @@ import pickle
 import streamlit as st
 import pandas as pd
 import numpy as np
+import datetime as dt
 
-@st.cache(suppress_st_warning=True)
+@st.cache_data()
 def encode_location(location):
-    locations = [
-        'Airbase', 'BabaDogo', 'ClayCity', 'Embakasi', 'Karen', 'Karura',
-        'NairobiCentral', 'NairobiSouth', 'NairobiWest', 'Ruai', 'SouthC',
-        'UmojaI', 'UmojaIi', 'UpperSavannah', 'Utalii', 'Utawala',
-        'UthiruRuthimitu', 'Njiru', 'Pangani', 'Ngara', 'Mwiki',
-        'ParklandsHighridge', 'Pumwani', 'Riruta', 'Roysambu',
-        'Sarangombe', 'Viwandani', 'DandoraAreaI', 'DandoraAreaIi',
-        'DandoraAreaIii', 'DandoraAreaIv', 'EastleighNorth',
-        'EastleighSouth', 'Gatina', 'Githurai', 'Harambee', 'Kahawa',
-        'KahawaWest', 'KariobangiNorth', 'KariobangiSouth',
-        'KayoleCentral', 'KayoleNorth', 'KayoleSouth', 'Kileleshwa',
-        'WoodleyKenyattaGolfCourse', 'Waithaka', 'Zimmerman',
-        'ZiwaniKariokor'
-    ]
-    
-    # Handle unknown location
-    if location not in locations:
-        st.warning(f"Unknown location: {location}. Using default encoding.")
-        return -1
-    
-    return locations.index(location)
+    locations = ['Airbase', 'BabaDogo', 'ClayCity', 'Embakasi', 'Karen', 'Karura', 'NairobiCentral', 
+    'NairobiSouth', 'NairobiWest', 'Ruai', 'SouthC', 'UmojaI', 'UmojaIi', 'UpperSavannah', 'Utalii', 
+    'Utawala', 'UthiruRuthimitu', 'Njiru', 'Pangani', 'Ngara', 'Mwiki', 'ParklandsHighridge', 'Pumwani', 
+    'Riruta', 'Roysambu', 'Sarangombe', 'Viwandani', 'DandoraAreaI', 'DandoraAreaIi', 'DandoraAreaIii', 
+    'DandoraAreaIv', 'EastleighNorth', 'EastleighSouth', 'Gatina', 'Githurai', 'Harambee', 'Kahawa', 
+    'KahawaWest', 'KariobangiNorth', 'KariobangiSouth', 'KayoleCentral', 'KayoleNorth', 'KayoleSouth', 
+    'Kileleshwa', 'WoodleyKenyattaGolfCourse', 'Waithaka', 'Zimmerman', 'ZiwaniKariokor']
 
-@st.cache(allow_output_mutation=True, suppress_st_warning=True)
-def prediction(Date, Location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed, 
+    encoded_location = [0] * len(locations)
+    try:
+        index = locations.index(location)
+        encoded_location[index] = 1
+    except ValueError:
+        pass  # Handle the case if location is not found in the list
+    return encoded_location
+
+@st.cache_data()
+def preprocess_date(date):
+    reference_date = dt.date(1900, 1, 1)
+    return (date - reference_date).days
+
+@st.cache_data()
+def encode_categorical_variables(wind_dir_9am, wind_dir_3pm, wind_gust_dir, rain_today):
+    # Encode wind directions
+    wind_dir_mapping = {'N': 0, 'NE': 1, 'E': 2, 'SE': 3, 'S': 4, 'SW': 5, 'W': 6, 'NW': 7}
+    encoded_wind_dir_9am = wind_dir_mapping.get(wind_dir_9am, -1)
+    encoded_wind_dir_3pm = wind_dir_mapping.get(wind_dir_3pm, -1)
+    encoded_wind_gust_dir = wind_dir_mapping.get(wind_gust_dir, -1)
+    
+    # Encode RainToday
+    encoded_rain_today = 1 if rain_today == 'Yes' else 0
+    
+    return encoded_wind_dir_9am, encoded_wind_dir_3pm, encoded_wind_gust_dir, encoded_rain_today
+
+@st.cache_data()
+def prediction(Date, encoded_location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed, 
         WindSpeed9am, WindSpeed3pm, Humidity9am, Humidity3pm, Pressure9am, Pressure3pm,
         Cloud9am, Cloud3pm, Temp9am, Temp3pm, WindDir9am, WindDir3pm, WindGustDir, RainToday):
     
-
-    # Preprocess categorical features
-    encoded_location = encode_location(Location)
-    wind_dir_9am_encoded = encode_location(WindDir9am)
-    wind_dir_3pm_encoded = encode_location(WindDir3pm)
-    wind_gust_dir_encoded = encode_location(WindGustDir)
-    rain_today_encoded = 1 if RainToday == 'Yes' else 0
-
+    # Convert Date to numerical representation
+    processed_date = preprocess_date(Date)
+    
+    # Encode categorical variables
+    encoded_wind_dir_9am, encoded_wind_dir_3pm, encoded_wind_gust_dir, encoded_rain_today = encode_categorical_variables(
+        WindDir9am, WindDir3pm, WindGustDir, RainToday)
+    
+    # Construct input_data array with exactly 24 features
     input_data = np.array([
-        Date, encoded_location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine,
-        WindGustSpeed, WindSpeed9am, WindSpeed3pm, Humidity9am, Humidity3pm, Pressure9am, Pressure3pm,
-        Cloud9am, Cloud3pm, Temp9am, Temp3pm, wind_dir_9am_encoded, wind_dir_3pm_encoded,
-        wind_gust_dir_encoded, rain_today_encoded
-    ]).astype(np.float64)
+        processed_date, *encoded_location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine,
+        WindGustSpeed, WindSpeed9am, WindSpeed3pm, Humidity9am, Humidity3pm, Pressure9am, Pressure3pm, Cloud9am,
+        Cloud3pm, Temp9am, Temp3pm, encoded_wind_dir_9am, encoded_wind_dir_3pm, encoded_wind_gust_dir, encoded_rain_today
+    ], dtype=np.float64)[:24]  # Select the first 24 features
+    
     return input_data
-
 
 def main():
     app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction']) #two pages
@@ -80,7 +92,7 @@ def main():
         'EastleighSouth', 'Gatina', 'Githurai', 'Harambee', 'Kahawa',
         'KahawaWest', 'KariobangiNorth', 'KariobangiSouth',
         'KayoleCentral', 'KayoleNorth', 'KayoleSouth', 'Kileleshwa',
-        'WoodleyKenyattaGolfCourse', 'Waithaka', 'Zimmerman',
+        'WoodleyKenyattaGolf', 'KayoleSouth', 'Kileleshwa', 'WoodleyKenyattaGolfCourse', 'Waithaka', 'Zimmerman',
         'ZiwaniKariokor' ))
 
         col1,col2 = st.columns(2)
@@ -102,24 +114,27 @@ def main():
             Cloud3pm = st.number_input('Cloud 3pm',min_value=0,max_value=100,value=9, step=1)
             Temp3pm = st.number_input('Temperature 3pm',min_value=0,max_value=40,value=12, step=1)
 
+        encoded_location = encode_location(Location)
+
         if st.button("Predict"):
             # loading the trained model
-            pickle_in = open('C:/Users/Han/xgboost.pkl', 'rb') 
-            xgboost = pickle.load(pickle_in)
+            model = pickle.load(open("C:/Users/Han/classifier.pkl", "rb"))
 
-
-            input_data_reshaped = prediction(
-                Date, Location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed,
+            input_data = prediction(
+                Date, encoded_location, MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed,
                 WindSpeed9am, WindSpeed3pm, Humidity9am, Humidity3pm, Pressure9am, Pressure3pm, Cloud9am,
                 Cloud3pm, Temp9am, Temp3pm, WindDir9am, WindDir3pm, WindGustDir, RainToday
             ).reshape(1, -1)
 
-            prediction_result = xgboost.predict(input_data_reshaped)
+            prediction_result = model.predict(input_data)
 
             if prediction_result[0] == 0:
                 st.error('Tomorrow will be a bright sunny day!')
+                st.image('sunny.gif')
             elif prediction_result[0] == 1:
-                st.success('Expect raindrops tomorrow!')
+                st.success('It will rain tomorrow. Dont forget to carry an umberella!')
+                st.image('raining.gif')
 
 if __name__ == '__main__':
     main()
+
