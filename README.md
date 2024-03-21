@@ -1,5 +1,8 @@
 # rainPredictionStreamlit
-### FINAL OUTPUT OF THE PROJECT: 
+
+A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over two ml models; logistic regression and random fores classifier. The accuracy score of Random Forest is high (85%) when compared with accuracy scores of Logistic Regression (84%), but consumes lot of time to train the model. In terms of computation time and Accuracy score, logistic Regression model is doing a good job. I havent done hyperparameter tuning. But it is highly recommended to do it if possible.
+
+
 
 ![Streamlit - Google Chrome 14_03_2024 19_56_57](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/a47b700f-6cdf-477d-9b20-63d07f3bcdda)
 ![Streamlit - Google Chrome 14_03_2024 19_57_06](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/1e225c2a-bb50-4ed4-85e3-7e49bd69f99f)
