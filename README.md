@@ -19,7 +19,7 @@ Predictor:
 
 Result:
 ![rainApp · Streamlit - Google Chrome 21_03_2024 13_52_03](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/4977703f-f701-41b8-b811-57b99b5d69c8)
-![rainApp · Streamlit - Google Chrome 21_03_2024 16_39_03](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/f0255d7e-6894-4895-ba57-592d77d275ea)
+![rainApp · Streamlit - Google Chrome 21_03_2024 16_41_26](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/d4f8489b-daa0-41f1-be17-4d7d68271852)
 
 
 
