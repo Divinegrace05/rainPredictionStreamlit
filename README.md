@@ -1,6 +1,6 @@
 # rainPredictionStreamlit
 
-A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over two ml models; logistic regression and random forest classifier. The accuracy score of Random Forest is high (85%) when compared with accuracy scores of Logistic Regression (84%), but consumes lot of time to train the model. In terms of computation time and Accuracy score, logistic Regression model is doing a good job. I havent done hyperparameter tuning. But it is highly recommended to do it if possible.
+A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over three ml models; logistic regression, random forest classifier and XGBoost. The accuracy score of XGBoost is high (86%) when compared with accuracy scores of Logistic Regression and Random Forest.
 
 # Tech Stack
 Back-End: Streamlit, Python
