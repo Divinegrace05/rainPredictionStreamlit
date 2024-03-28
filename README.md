@@ -1,4 +1,4 @@
-# rainPredictionStreamlit
+![rainApp · Streamlit - Google Chrome 28_03_2024 20_15_17](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/2984f19e-0a6b-4ab4-bd6d-354f812331f6)# rainPredictionStreamlit
 
 A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over three ml models; logistic regression, random forest classifier and XGBoost. The accuracy score of XGBoost is high (86%) when compared with accuracy scores of Logistic Regression and Random Forest.
 
@@ -18,8 +18,8 @@ Predictor:
 ![rainApp · Streamlit - Google Chrome 14_03_2024 19_58_08](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/48d96f53-a962-473a-827c-c4657a34bcdd)
 
 Result:
-![rainApp · Streamlit - Google Chrome 21_03_2024 13_52_03](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/4977703f-f701-41b8-b811-57b99b5d69c8)
-![rainApp · Streamlit - Google Chrome 22_03_2024 09_09_26](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/b272a0a5-7821-4525-9e7d-b2222e0d39d1)
+![rainApp · Streamlit - Google Chrome 28_03_2024 20_16_29](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/0ad33931-5439-4eb4-87f0-8fe15abf3978)
+![rainApp · Streamlit - Google Chrome 28_03_2024 20_15_17](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/0420b716-36e0-4848-80c4-6c2ebc2826b8)
 
 
 If you like this project please do give a star. I am also giving my LinkedIn profile. If you wish we can connect there too
