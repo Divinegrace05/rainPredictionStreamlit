@@ -1,4 +1,4 @@
-![rainApp · Streamlit - Google Chrome 28_03_2024 20_15_17](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/2984f19e-0a6b-4ab4-bd6d-354f812331f6)# rainPredictionStreamlit
+rainPredictionStreamlit
 
 A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over three ml models; logistic regression, random forest classifier and XGBoost. The accuracy score of XGBoost is high (86%) when compared with accuracy scores of Logistic Regression and Random Forest.
 
