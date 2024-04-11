@@ -8,18 +8,25 @@ Back-End: Streamlit, Python
 IDE: Jupyter notebook, Visual Studio
 
 ### Screenshots of the WebApp
-Landing page:
-![Streamlit - Google Chrome 14_03_2024 19_56_57](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/a47b700f-6cdf-477d-9b20-63d07f3bcdda)
-![Streamlit - Google Chrome 14_03_2024 19_57_06](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/1e225c2a-bb50-4ed4-85e3-7e49bd69f99f)
-![Streamlit - Google Chrome 14_03_2024 19_57_25](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/e4966f86-90ee-40c7-aa89-1859ff53b6de)
+Authentication page:
+![rainapp · Streamlit - Google Chrome 11_04_2024 12_14_54](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/2ebdabc6-1e0e-4b47-84fc-9bd0dfad4e50)
+![rainapp · Streamlit - Google Chrome 11_04_2024 12_15_23](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/719a7bd4-da65-4a7a-a311-f42839cdb580)
+
+
+Home page:
+![rainapp · Streamlit - Google Chrome 11_04_2024 12_56_19](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/9205c0f4-6b79-4c5b-ade9-c10ed51d008c)
+![rainapp · Streamlit - Google Chrome 11_04_2024 12_56_28](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/be939591-cfaf-4419-bcee-0c8ebbde71ce)
+![rainapp · Streamlit - Google Chrome 11_04_2024 13_15_02](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/b917db4a-9476-478a-b976-c65c011c9115)
+
 
 Predictor:
-![rainApp · Streamlit - Google Chrome 14_03_2024 19_57_58](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/8798663b-1d89-4f5f-a14e-dce8f2092b2b)
-![rainApp · Streamlit - Google Chrome 14_03_2024 19_58_08](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/48d96f53-a962-473a-827c-c4657a34bcdd)
+![rainapp · Streamlit - Google Chrome 11_04_2024 13_15_14](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/67a5cb54-5e5f-44f7-978f-25811a968f93)
 
-Result:
-![rainApp · Streamlit - Google Chrome 28_03_2024 20_16_29](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/0ad33931-5439-4eb4-87f0-8fe15abf3978)
-![rainApp · Streamlit - Google Chrome 28_03_2024 20_15_17](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/0420b716-36e0-4848-80c4-6c2ebc2826b8)
+
+Results:
+![rainapp · Streamlit - Google Chrome 11_04_2024 13_16_37](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/ecdf0af4-1aff-4745-aced-722a03f92ffb)
+![rainapp · Streamlit - Google Chrome 11_04_2024 13_15_28](https://github.com/Divinegrace05/rainPredictionStreamlit/assets/134943380/6897dc2c-f2bb-46e6-b7c3-ed8b09eb584b)
+
 
 
 If you like this project please do give a star. I am also giving my LinkedIn profile. If you wish we can connect there too
