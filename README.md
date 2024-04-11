@@ -3,7 +3,7 @@ rainPredictionStreamlit
 A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset as the original dataset which I then modified to fit my preference. This project is tested over three ml models; logistic regression, random forest classifier and XGBoost. The accuracy score of XGBoost is high (84.6%) when compared with accuracy scores of Logistic Regression and Random Forest.
 
 # Tech Stack
-Back-End: Streamlit, Python
+Back-End: Streamlit, Python, Firebase
 
 IDE: Jupyter notebook, Visual Studio
 
